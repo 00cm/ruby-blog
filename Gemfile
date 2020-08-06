@@ -46,5 +46,11 @@ group :test do
   gem 'webdrivers'
 end
 
+#Use Spring to keep the application running in the background, so it doesn't
+#have to reload every time you run a test, rake task or migration.
+group :development do
+  gem "spring"
+end
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

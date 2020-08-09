@@ -16,7 +16,10 @@
 <%= render 'comments/form' %> 
 
 <h2>Comments</h2>
-<%= render @article.comments %>
+   <ul>
+    <%= render :partial => 'comments/comment', :collection => @article.comments -%>
+  </ul>
+
 
 <%= link_to 'Edit', edit_article_path(@article) %>
 <td><%= link_to 'Destroy', article_path(@article),

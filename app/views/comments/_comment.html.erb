@@ -1,6 +1,10 @@
 <p>
+<% if comment.commenter == nil %>
+<% else %>
+
   <strong>Commenter:</strong>
   <%= comment.commenter %>
+
 </p>
  
 <p>
@@ -13,3 +17,4 @@
                method: :delete,
                data: { confirm: 'Are you sure?' } %>
 </p>
+<% end %>

@@ -17,7 +17,11 @@
 
 <h2>Comments</h2>
    <ul>
-    <%= render :partial => 'comments/comment', :collection => @article.comments -%>
+   <% if @article.comments.empty? %>
+      No comments.
+   <% else %>
+      <%= render :partial => 'comments/comment', :collection => @article.comments -%>
+   <% end %>
   </ul>
 
 

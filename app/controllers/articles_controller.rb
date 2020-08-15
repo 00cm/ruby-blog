@@ -1,12 +1,14 @@
 class ArticlesController < ApplicationController
 	http_basic_authenticate_with name: "cmm", password: "pass123", except: [:index, :show]
+	
 
 	def index
       @articles = Article.all
     end
 
 	def show
-      @article = Article.find(params[:id])
+	  @article = Article.find(params[:id])
+	  @comments = @article.comments.all
     end
 
 	def new

@@ -24,6 +24,7 @@ class ArticlesController < ApplicationController
 	  if @article.save
 	    redirect_to @article
 	  else
+		flash.now[:notice] = "Entries must be 5 characters or more in length."
 	    render 'new'
 	  end
 	end
